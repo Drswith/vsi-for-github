@@ -2,7 +2,7 @@
 
 ## Development
 
-Use Node.js 24 and pnpm 12. Run `pnpm install`, then `pnpm typecheck` and `pnpm build` before opening a pull request.
+Install mise, then run `mise install` from the repository root. `mise.toml` supplies Node.js 24 and pnpm 12.4.1. Run `mise exec -- pnpm install --frozen-lockfile`, then `mise exec -- pnpm typecheck` and `mise exec -- pnpm build` before opening a pull request.
 
 ## Upstream icon data
 

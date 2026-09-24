@@ -18,22 +18,22 @@ The extension currently targets `github.com` repository pages. Other websites an
 
 ## Build
 
-Requirements: Node.js 24 and pnpm 12.
+Requirements: [mise](https://mise.jdx.dev/). Run `mise install` at the repository root to install Node.js 24 and pnpm 12.4.1 from `mise.toml`.
 
 ```sh
-pnpm install
-pnpm build
-pnpm package
+mise exec -- pnpm install
+mise exec -- pnpm build
+mise exec -- pnpm package
 ```
 
-`pnpm build` writes the unpacked extension to `dist/`. `pnpm package` creates `artifacts/vsi-for-github-<version>.zip` from that directory.
+`mise exec -- pnpm build` writes the unpacked extension to `dist/`. `mise exec -- pnpm package` creates `artifacts/vsi-for-github-<version>.zip` from that directory.
 
 To update the bundled icon data from the latest `vscode-icons` GitHub Release:
 
 ```sh
-pnpm sync:upstream
-pnpm typecheck
-pnpm build
+mise exec -- pnpm sync:upstream
+mise exec -- pnpm typecheck
+mise exec -- pnpm build
 ```
 
 The sync workflow runs on a schedule and creates a reviewable pull request when the upstream release changes. It validates the upstream license statement and records the release, package checksum, every bundled SVG path, and each SVG checksum before opening that pull request.

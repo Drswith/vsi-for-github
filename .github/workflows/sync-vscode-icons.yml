@@ -15,19 +15,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - uses: jdx/mise-action@v4
+      - name: Resolve pnpm store path
+        id: pnpm-store
+        run: echo "path=$(mise exec -- pnpm store path)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
         with:
-          version: 12.4.1
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
+          path: ${{ steps.pnpm-store.outputs.path }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('mise.toml', 'pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-pnpm-
+      - run: mise exec -- pnpm install --frozen-lockfile
       - name: Sync latest upstream release
         id: sync
-        run: pnpm sync:upstream
-      - run: pnpm typecheck
-      - run: pnpm build
+        run: mise exec -- pnpm sync:upstream
+      - run: mise exec -- pnpm typecheck
+      - run: mise exec -- pnpm build
       - name: Check generated changes
         id: changes
         run: |
