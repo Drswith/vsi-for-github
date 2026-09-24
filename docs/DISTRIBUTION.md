@@ -21,3 +21,14 @@ To prepare a GitHub Release, set the same semantic version in `package.json` and
 Before submitting a store listing, publish the privacy policy at a stable public URL and enter that URL in the store dashboard. The repository copy is [docs/PRIVACY.md](PRIVACY.md).
 
 In the Chrome Web Store privacy declarations, describe that the extension reads visible GitHub file and folder names (website content) and uses them locally to render icons. Do not report “no data handling” solely because names are not sent to a server; review the [Chrome Web Store user-data policy](https://developer.chrome.com/docs/webstore/user_data) when preparing the listing.
+
+## Browser store listing TODO
+
+Store publication is not part of the current GitHub Actions release workflow. The workflow only attaches the extension ZIP to a GitHub Release.
+
+- [ ] Review the license terms for all bundled icons, identify branded assets without redistribution permission, and remove or replace them or obtain permission.
+- [ ] Publish the privacy policy at a stable public URL and prepare accurate store privacy declarations.
+- [ ] Prepare store descriptions, screenshots, categories, support contact details, and target markets.
+- [ ] Register individual publisher accounts for the target stores and create the store listings.
+- [ ] Submit the ZIP to each store for review, then record the approved listing URLs and extension IDs.
+- [ ] After the first manual publication, add a separately gated store-upload job using the store's supported publishing API and protected GitHub Actions secrets.
