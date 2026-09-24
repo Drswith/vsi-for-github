@@ -6,6 +6,25 @@ VSI for GitHub is an independently implemented Chromium Manifest V3 extension. I
 
 The browser integration is implemented in this repository. This project is not a fork of the previously published GitHub icon extensions, and it is not affiliated with Microsoft, GitHub, or the `vscode-icons` team.
 
+## Preview
+
+![VSI for GitHub in dark and light appearances: recognizable folder icons and file icons for Git, Markdown, mise, npm, pnpm, TypeScript configuration, and Vite](artwork/previews/hero.png)
+
+Browse your repository as usual. File and folder icons follow along as you open directories.
+
+<details>
+<summary>Watch the repository browsing demo (GIF)</summary>
+
+![Live GitHub walkthrough: browse file types in the repository root, open the public directory with CSS and JSON icons, then open scripts with JavaScript icons](artwork/previews/browsing.gif)
+
+[Watch or download the MP4](artwork/previews/browsing.mp4) for playback controls.
+
+</details>
+
+Captured from this repository on GitHub in Ego, with the unpacked extension loaded. The hero uses cropped excerpts from real light and dark screenshots; the demo records actual directory navigation. [Original listing screenshot](artwork/github-file-icons-preview.png) · [Capture details and editable artwork](artwork/previews/README.md).
+
+The icon artwork comes from [`vscode-icons`](https://github.com/vscode-icons/vscode-icons) and retains its upstream terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
 ## Current scope
 
 - GitHub repository file and folder rows.

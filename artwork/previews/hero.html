@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VSI for GitHub — product preview</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1280px; height: 960px; }
+    body {
+      color: #f4f3fc;
+      background: #121323;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      width: 1280px;
+      height: 960px;
+      padding: 44px 56px 0;
+      background: radial-gradient(ellipse at 10% 0%, #302456 0%, transparent 53%);
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { width: 44px; height: 44px; }
+    .brand strong { font-size: 24px; font-weight: 650; letter-spacing: -.4px; }
+    .eyebrow { margin-left: auto; color: #b6adc9; font-size: 13px; letter-spacing: 2px; }
+    h1 { margin: 32px 0 12px; font-size: 52px; line-height: 1.12; letter-spacing: -1.6px; font-weight: 650; }
+    .intro { margin: 0; color: #c4bfd5; font-size: 22px; line-height: 1.5; }
+    .previews { display: flex; gap: 32px; margin-top: 35px; }
+    .panel { width: 568px; overflow: hidden; border-radius: 14px; box-shadow: 0 18px 55px #0003; }
+    .bar { height: 60px; padding: 0 26px; display: flex; align-items: center; justify-content: space-between; font-size: 17px; }
+    .path { font-weight: 600; letter-spacing: -.25px; }
+    .theme { font-size: 13px; }
+    .dark .bar { background: #2d333b; color: #d9dfe7; border-bottom: 1px solid #444c56; }
+    .dark .theme { color: #adb5c0; }
+    .light .bar { background: #f6f8fa; color: #24292f; border-bottom: 1px solid #d0d7de; }
+    .light .theme { color: #57606a; }
+    .capture { position: relative; height: 564.56px; overflow: hidden; }
+    .capture img { position: absolute; width: 568px; height: auto; display: block; }
+    /* Two contiguous, eight-row excerpts of the unmodified GitHub captures. */
+    .dark .capture img { top: -141.14px; }
+    .light .capture img { bottom: 0; }
+    footer { display: flex; align-items: center; justify-content: space-between; margin-top: 27px; color: #afa7c1; font-size: 15px; }
+    .benefits { display: flex; gap: 22px; }
+    .benefits span::before { content: ""; display: inline-block; margin: 0 9px 2px 0; width: 5px; height: 5px; border-radius: 50%; background: #9d8ee8; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">
+      <img src="../vsi-icon.svg" alt="">
+      <strong>VSI for GitHub</strong>
+      <span class="eyebrow">YOUR REPOSITORIES, IN COLOR</span>
+    </div>
+    <h1>Find files by sight.</h1>
+    <p class="intro">Familiar vscode-icons. Right where you browse your code.</p>
+    <div class="previews">
+      <section class="panel dark" aria-label="GitHub dark appearance">
+        <div class="bar"><span class="path">vsi-for-github /</span><span class="theme">Dark appearance</span></div>
+        <div class="capture"><img src="source-dark.png" alt="Real GitHub folder and file icons, including docs, public, scripts, src, Git, Markdown, and license files."></div>
+      </section>
+      <section class="panel light" aria-label="GitHub light appearance">
+        <div class="bar"><span class="path">vsi-for-github /</span><span class="theme">Light appearance</span></div>
+        <div class="capture"><img src="source-light.png" alt="Real GitHub file icons for Markdown, mise, npm, pnpm, TypeScript configuration, and Vite."></div>
+      </section>
+    </div>
+    <footer>
+      <span>Real GitHub captures · VSI v0.1.0</span>
+      <div class="benefits"><span>Files &amp; folders</span><span>Light &amp; dark</span><span>Processed locally</span></div>
+    </footer>
+  </main>
+</body>
+</html>
