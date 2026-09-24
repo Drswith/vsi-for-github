@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "VSI for GitHub",
+  "short_name": "VSI",
+  "version": "0.1.0",
+  "description": "File and folder icons for GitHub repositories, powered by vscode-icons.",
+  "icons": {
+    "16": "icons/vsi-16.png",
+    "48": "icons/vsi-48.png",
+    "128": "icons/vsi-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/vscode-icons/*.svg"],
+      "matches": ["https://github.com/*"]
+    }
+  ]
+}

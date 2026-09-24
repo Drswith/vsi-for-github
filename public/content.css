@@ -1,0 +1,9 @@
+.vsi-for-github-icon {
+  display: inline-block !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin-inline-end: 6px !important;
+  vertical-align: middle !important;
+  object-fit: contain !important;
+  flex: 0 0 20px !important;
+}

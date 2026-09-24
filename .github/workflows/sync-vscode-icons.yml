@@ -1,0 +1,57 @@
+name: Sync vscode-icons
+
+on:
+  schedule:
+    - cron: "17 8 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.4.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Sync latest upstream release
+        id: sync
+        run: pnpm sync:upstream
+      - run: pnpm typecheck
+      - run: pnpm build
+      - name: Check generated changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Open upstream update pull request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/sync-vscode-icons
+          delete-branch: true
+          commit-message: "chore: sync vscode-icons v${{ steps.sync.outputs.version }}"
+          title: "chore: sync vscode-icons v${{ steps.sync.outputs.version }}"
+          body: |
+            Synchronize the icon mappings and referenced SVG assets from [vscode-icons v${{ steps.sync.outputs.version }}](${{ steps.sync.outputs.release_url }}).
+
+            The generated asset inventory includes the VSIX SHA-256 and a SHA-256 for every bundled SVG. Review `THIRD_PARTY_NOTICES.md` and the upstream license statement with the generated diff.
+
+            This pull request was created automatically. Merge it after the build workflow succeeds.
+      - name: Dispatch CI for the generated branch
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run ci.yml --ref automation/sync-vscode-icons --field checkout_ref=automation/sync-vscode-icons
