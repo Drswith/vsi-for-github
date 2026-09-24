@@ -18,6 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
+      - name: Set initial Git branch
+        run: git config --global init.defaultBranch main
       - uses: actions/checkout@v5
         with:
           ref: ${{ github.event.inputs.checkout_ref || github.event.pull_request.head.sha || github.sha }}
