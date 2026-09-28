@@ -4,7 +4,7 @@
     "version": "12.19.0",
     "tag": "v12.19.0",
     "releaseUrl": "https://github.com/vscode-icons/vscode-icons/releases/tag/v12.19.0",
-    "packageAsset": "vsi-vscode-icons-12.19.0.vsix",
+    "packageAsset": "vscode-icons-12.19.0.vsix",
     "packageSha256": "6891095459234809b9c5161850f2dabc91a80b3eca2daf599d050a88b455e960",
     "mappingSource": "extension/dist/src/vsicons-icon-theme.json",
     "licenseSource": "https://github.com/vscode-icons/vscode-icons/blob/v12.19.0/README.md#license"
