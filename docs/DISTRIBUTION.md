@@ -16,7 +16,7 @@ The same Manifest V3 build targets Chromium browsers. A normal Chrome install mu
 
 GitHub Release ZIP files are downloadable packages for manual development or review. They do not provide one-click installation or store-managed updates. No store listing has been published yet.
 
-To prepare a GitHub Release, set the same semantic version in `package.json` and `public/manifest.json`, then publish a GitHub Release from a matching `vX.Y.Z` tag. The release workflow checks that all three versions match, builds the extension, and attaches its ZIP. Publishing a GitHub Release does not publish to the browser stores.
+To prepare a GitHub Release, set the same semantic version in `package.json` and `public/manifest.json`, run `pnpm check`, then publish a GitHub Release from a matching `vX.Y.Z` tag. The release workflow runs the full validation pipeline and requires that exact tag before attaching its ZIP; tags without the `v` prefix are rejected. Ordinary branch and PR builds do not treat branch names as release versions. The ZIP is checked for manifest resources, unchanged distribution notices, referenced SVGs and their recorded SHA-256 checksums, and a lossless ZIP round trip. Publishing a GitHub Release does not publish to the browser stores.
 
 Before submitting a store listing, publish the privacy policy at a stable public URL and enter that URL in the store dashboard. The repository copy is [docs/PRIVACY.md](PRIVACY.md).
 

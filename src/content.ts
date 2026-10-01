@@ -120,16 +120,18 @@ function getIconPath(entry: FileEntry): string {
     const defaultIcon = entry.isExpanded
       ? theme.defaults.folderExpanded
       : theme.defaults.folder;
-    return folderMap[name] ?? defaultIcon;
+    return Object.hasOwn(folderMap, name) ? folderMap[name] : defaultIcon;
   }
 
-  const namedIcon = theme.files.names[name];
+  const namedIcon = Object.hasOwn(theme.files.names, name) ? theme.files.names[name] : undefined;
   if (namedIcon) return namedIcon;
 
   let dotIndex = name.indexOf(".");
   while (dotIndex >= 0 && dotIndex < name.length - 1) {
     const extension = name.slice(dotIndex + 1);
-    const extensionIcon = theme.files.extensions[extension];
+    const extensionIcon = Object.hasOwn(theme.files.extensions, extension)
+      ? theme.files.extensions[extension]
+      : undefined;
     if (extensionIcon) return extensionIcon;
     dotIndex = name.indexOf(".", dotIndex + 1);
   }
@@ -199,17 +201,6 @@ function scheduleEnhancement(): void {
   });
 }
 
-function refreshIconTheme(): void {
-  document.querySelectorAll<HTMLImageElement>(`img[${iconAttribute}]`).forEach((image) => {
-    const link = image.closest("a");
-    if (!(link instanceof HTMLAnchorElement)) return;
-    const repository = getCurrentRepository();
-    if (!repository) return;
-    const entry = getFileEntry(link, repository);
-    if (entry) image.src = getIconUrl(getIconPath(entry));
-  });
-}
-
 function installObservers(): void {
   const contentObserver = new MutationObserver((records) => {
     const hasPageChanges = records.some((record) => {
@@ -226,7 +217,7 @@ function installObservers(): void {
     subtree: true,
   });
 
-  const themeObserver = new MutationObserver(refreshIconTheme);
+  const themeObserver = new MutationObserver(scheduleEnhancement);
   themeObserver.observe(document.documentElement, {
     attributes: true,
     attributeFilter: ["data-color-mode", "data-light-theme", "data-dark-theme"],
@@ -234,7 +225,7 @@ function installObservers(): void {
 
   document.addEventListener("turbo:load", scheduleEnhancement);
   document.addEventListener("turbo:render", scheduleEnhancement);
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", refreshIconTheme);
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", scheduleEnhancement);
 }
 
 enhanceEntries();
