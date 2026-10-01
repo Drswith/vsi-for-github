@@ -2,7 +2,15 @@
 
 ## Development
 
-Install mise, then run `mise install` from the repository root. `mise.toml` supplies Node.js 24 and pnpm 12.4.1. Run `mise exec -- pnpm install --frozen-lockfile`, then `mise exec -- pnpm typecheck` and `mise exec -- pnpm build` before opening a pull request.
+Install mise, then run `mise install` from the repository root. `mise.toml` supplies Node.js 24 (24.15 or newer) and pnpm 12.4.1. Run `mise exec -- pnpm install --frozen-lockfile`, then `mise exec -- pnpm check` before opening a pull request.
+
+`check` runs type checking, regression tests, asset validation, the production build, and ZIP packaging. Tests execute the production content-script bundle against GitHub DOM fixtures in jsdom and exercise invalid assets, incomplete packages, and release versions without network access. They do not replace a real browser check when GitHub changes its page layout.
+
+## CI and merging
+
+The required `build` check runs against GitHub's PR merge commit. Keep `main` protected with this check required from GitHub Actions, require the branch to be up to date, and apply protection to administrators. Manual workflow runs are named `manual-build` so a branch-only build cannot satisfy the PR gate.
+
+All three workflows use the shared setup action and the same `pnpm check` command. The sync workflow always lets `create-pull-request` inspect the diff, including when there is no change, so merged or unnecessary automation branches can be cleaned up. GitHub requires a maintainer to select **Approve workflows to run** for PRs created with `GITHUB_TOKEN`; the approved PR CI validates the merge result before merging.
 
 ## Upstream icon data
 
