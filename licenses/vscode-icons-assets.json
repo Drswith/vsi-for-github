@@ -1,19 +1,19 @@
 {
   "upstream": {
     "repository": "vscode-icons/vscode-icons",
-    "version": "12.19.0",
-    "tag": "v12.19.0",
-    "releaseUrl": "https://github.com/vscode-icons/vscode-icons/releases/tag/v12.19.0",
-    "packageAsset": "vscode-icons-12.19.0.vsix",
-    "packageSha256": "6891095459234809b9c5161850f2dabc91a80b3eca2daf599d050a88b455e960",
+    "version": "13.0.0",
+    "tag": "v13.0.0",
+    "releaseUrl": "https://github.com/vscode-icons/vscode-icons/releases/tag/v13.0.0",
+    "packageAsset": "vscode-icons-13.0.0.vsix",
+    "packageSha256": "0f38ea41a7a9395d79d2ca712b5930009416fa609b9a77f9eb90247125258983",
     "mappingSource": "extension/dist/src/vsicons-icon-theme.json",
-    "licenseSource": "https://github.com/vscode-icons/vscode-icons/blob/v12.19.0/README.md#license"
+    "licenseSource": "https://github.com/vscode-icons/vscode-icons/blob/v13.0.0/README.md#license"
   },
   "rightsSummary": {
     "mappings": "Derived from the upstream icon theme manifest and supplemented with common file-name and extension aliases that point to unmodified upstream SVGs; the upstream identifies its source code as MIT-licensed. See licenses/vscode-icons-source-MIT.txt.",
     "icons": "CC BY-SA 4.0, except branded icons which retain their respective copyright terms",
     "perFileClassification": "The upstream VSIX does not identify which individual SVGs are branded icons. Do not infer a per-file license from this generated inventory.",
-    "licenseSource": "https://github.com/vscode-icons/vscode-icons/blob/v12.19.0/README.md#license"
+    "licenseSource": "https://github.com/vscode-icons/vscode-icons/blob/v13.0.0/README.md#license"
   },
   "assets": [
     {
@@ -53,6 +53,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_actionscript.svg",
+      "upstreamPath": "icons/file_type_actionscript.svg",
+      "sha256": "1554f9e1150ada31a953ff97a67e2a04659d99cbe742fcc2a461951574010840",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_affinity.svg",
       "upstreamPath": "icons/file_type_affinity.svg",
       "sha256": "db3edd63ff8e6e088e6cb9030f72c2bc1e833636851d305db62442d80c38696a",
@@ -86,6 +92,12 @@
       "path": "assets/vscode-icons/file_type_ai.svg",
       "upstreamPath": "icons/file_type_ai.svg",
       "sha256": "1f139cffa8acc42df2d4f69c649686d7527496352a98f346a6bd8b0574f2a08c",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_aikido.svg",
+      "upstreamPath": "icons/file_type_aikido.svg",
+      "sha256": "f9d5d928452a4ade51d665df801eebe58543b8c122679fe7465d6caa238ced5a",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -191,6 +203,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_asyncapi.svg",
+      "upstreamPath": "icons/file_type_asyncapi.svg",
+      "sha256": "1f2090b850872f1bf46d1daaec8ed88eb644c55c33e04b57e30728a606a7f978",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_atom.svg",
       "upstreamPath": "icons/file_type_atom.svg",
       "sha256": "03ec2468c7d44b8ddd045f397f497eed9960666190fbfe8666fa0513360be1b8",
@@ -233,6 +251,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_azureresourcemanager.svg",
+      "upstreamPath": "icons/file_type_azureresourcemanager.svg",
+      "sha256": "399b53c307f69e5e8faf80fdd0468a613d608743bf6675b284dbdddb849e127a",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_babel.svg",
       "upstreamPath": "icons/file_type_babel.svg",
       "sha256": "ef6e02eb0eb5a3842f18e38d1467df66d461babe615635e1d95c2c659e82c62f",
@@ -266,6 +290,12 @@
       "path": "assets/vscode-icons/file_type_bazel.svg",
       "upstreamPath": "icons/file_type_bazel.svg",
       "sha256": "ec5945d874af55dee25c85d99faa302eeb2bedf9659a7345b7e58031b0f993e9",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_behat.svg",
+      "upstreamPath": "icons/file_type_behat.svg",
+      "sha256": "f0231b7aefea37fc8a0e6054a23c47a5c242f56a79f269efd80c31b9b506e7a7",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -308,6 +338,12 @@
       "path": "assets/vscode-icons/file_type_bower.svg",
       "upstreamPath": "icons/file_type_bower.svg",
       "sha256": "05fd3d4e50bafd93abef539c95279bf23f0b64313b549793b75ba0476c94e32b",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_brakeman.svg",
+      "upstreamPath": "icons/file_type_brakeman.svg",
+      "sha256": "b78a4092e69bf8eb8367f31fdf6b25a6d49f9f6e3f8c3ba486d6ab2241c4cefa",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -395,6 +431,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_changelogen.svg",
+      "upstreamPath": "icons/file_type_changelogen.svg",
+      "sha256": "1d944493d8795f76553e91e7c16b31c6272ef97c80f201f3ea379f10a8b05155",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_changie.svg",
       "upstreamPath": "icons/file_type_changie.svg",
       "sha256": "64d8aeb5aa22f75e726e5ec669a905f847a63e43758031d503872c7e15238018",
@@ -403,7 +445,13 @@
     {
       "path": "assets/vscode-icons/file_type_cheader.svg",
       "upstreamPath": "icons/file_type_cheader.svg",
-      "sha256": "0217f6c7b67bad2fadc22a496591bd1f11838273fcf6d840866a8fdbbe792ed3",
+      "sha256": "234c58cb88150ce2c28c720509c88d4d2f472dd24458d7e891e953b24236135f",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_checkov.svg",
+      "upstreamPath": "icons/file_type_checkov.svg",
+      "sha256": "4d506800b2cac1544c840227d5ae64a175d5b1bea7ea88335355262c7998fe1a",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -479,6 +527,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_codegen.svg",
+      "upstreamPath": "icons/file_type_codegen.svg",
+      "sha256": "3ddb746270ab1234aff174550a6105622f6b4dfb9907f4fde1c60df3678e8bf1",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_codekit.svg",
       "upstreamPath": "icons/file_type_codekit.svg",
       "sha256": "13de8089485bcae32ac88fb1cb92b7b8ddb81be1417fae2d085b47a83a3d91d6",
@@ -551,6 +605,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_convex.svg",
+      "upstreamPath": "icons/file_type_convex.svg",
+      "sha256": "5ab619768674e06041884af220f1302b91482403300393e6706c7bb06e639eac",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_copilot.svg",
       "upstreamPath": "icons/file_type_copilot.svg",
       "sha256": "df50155f62043c6cc0e0f90f1d84d609f833713c9d9e5f3932e11739ad7ddfdf",
@@ -577,7 +637,7 @@
     {
       "path": "assets/vscode-icons/file_type_cppheader.svg",
       "upstreamPath": "icons/file_type_cppheader.svg",
-      "sha256": "60020a9a051d9b956820497701b47816a7478ecc157b09083a1371e8fa393af5",
+      "sha256": "a31bc52aa4cfd56b08af0f19cd0bc7fb1449e765e867a2d7679ed03c3e09a0d9",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -632,6 +692,12 @@
       "path": "assets/vscode-icons/file_type_cssmap.svg",
       "upstreamPath": "icons/file_type_cssmap.svg",
       "sha256": "c85a06984014ce581008fa8e6091a2e9500c3debfc20ee83f20a013b393309d0",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_csv.svg",
+      "upstreamPath": "icons/file_type_csv.svg",
+      "sha256": "80c4dfa78ab0a2f1d9c251409d82c824181394313673edd7c981c3fe0ce15f81",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -695,6 +761,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_dbt_bouncer.svg",
+      "upstreamPath": "icons/file_type_dbt_bouncer.svg",
+      "sha256": "01535b781ebfd569f82b1d006d2f67a10a4dfab59bc5f20fca113929ab8b5f63",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_dbt.svg",
       "upstreamPath": "icons/file_type_dbt.svg",
       "sha256": "08b62d024aa710c732a1949cd476b42b7fcb56789d1e32768cb4daa5de98c851",
@@ -704,6 +776,12 @@
       "path": "assets/vscode-icons/file_type_debian.svg",
       "upstreamPath": "icons/file_type_debian.svg",
       "sha256": "32f09ddfb4c54e9f744c7a872ea44b2261e2114bf6e28e7860a130c474eb3724",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_deepsource.svg",
+      "upstreamPath": "icons/file_type_deepsource.svg",
+      "sha256": "4510633f0fa25555d0fb5d67043117464603b97e7c96f416d129fa36a873eaad",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -749,9 +827,21 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_devprune.svg",
+      "upstreamPath": "icons/file_type_devprune.svg",
+      "sha256": "f58bc5ce1c5e917caee897a9968364f86877fffd41cef509ebc1fd4a9ae03e16",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_devvit.svg",
       "upstreamPath": "icons/file_type_devvit.svg",
       "sha256": "03ec4d51948d33da528676ccb31002d4d3e0ba05b1c705c15668fe20e144121a",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_direnv.svg",
+      "upstreamPath": "icons/file_type_direnv.svg",
+      "sha256": "e7cc0aca0b31cd78f5a569f4e15ff57a587ca523a12fcb97bb9edea0a0068f0c",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -847,7 +937,7 @@
     {
       "path": "assets/vscode-icons/file_type_dvc.svg",
       "upstreamPath": "icons/file_type_dvc.svg",
-      "sha256": "019f81042db10a3ea512c9bb24222e9c5eaabcbe1146a2a98b039e9aedc97e26",
+      "sha256": "7f9a20b680acedcd88fa6afe11f8ac78108717a427a7d39e7be24dcd133602a4",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -1085,6 +1175,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_fnox.svg",
+      "upstreamPath": "icons/file_type_fnox.svg",
+      "sha256": "0a322a9464ec10843eb572db04a5a05478f68be38aa0fa66397ad561958dfa42",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_font.svg",
       "upstreamPath": "icons/file_type_font.svg",
       "sha256": "1e34c2c5c4df5039f65ac699d8d3558e0ef6192ee8a849166581fc027b72570c",
@@ -1106,6 +1202,12 @@
       "path": "assets/vscode-icons/file_type_fossil.svg",
       "upstreamPath": "icons/file_type_fossil.svg",
       "sha256": "71415b32b7745a654a5a7b35db1085e66206c622ca45933db1547caa38f345c8",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_fresh.svg",
+      "upstreamPath": "icons/file_type_fresh.svg",
+      "sha256": "7039461de4579143fe292366a888edd44ac528928c62515aefd2951f5a47fa08",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -1259,6 +1361,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_golangci.svg",
+      "upstreamPath": "icons/file_type_golangci.svg",
+      "sha256": "a1b515f07755a3b248a21a7aa547eecc5247edb291ac990d767a8b59e84ff057",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_gpg.svg",
       "upstreamPath": "icons/file_type_gpg.svg",
       "sha256": "f8f19c6174c49519d7466bb45c197bfb0f8146e8556a009c8999c1a5bdf44e3f",
@@ -1298,6 +1406,12 @@
       "path": "assets/vscode-icons/file_type_gridsome.svg",
       "upstreamPath": "icons/file_type_gridsome.svg",
       "sha256": "d10e17f7dcd9a18a199ffa60645badcb06fda3bb7d4f6e56d2c1c730e43e6730",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_grok.svg",
+      "upstreamPath": "icons/file_type_grok.svg",
+      "sha256": "f0872d45473cf434e16aa92cee485c865be13a21cca9a9786dc9129479d4f0be",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -1352,6 +1466,18 @@
       "path": "assets/vscode-icons/file_type_helm.svg",
       "upstreamPath": "icons/file_type_helm.svg",
       "sha256": "e4743709e4ba4c7f72221eb81ffc58ac9c510067b745c5a32ed2e5ecf4fedb26",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_heroku.svg",
+      "upstreamPath": "icons/file_type_heroku.svg",
+      "sha256": "8b8d313c0b75c8003657e8a012f0c2e4d15b622797ae645bd4afc618c88cd86c",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_hip.svg",
+      "upstreamPath": "icons/file_type_hip.svg",
+      "sha256": "daa036ccc1090dffa639895668fed6caa6151bbc6b486ad8d5bd83c787b65303",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -1436,6 +1562,12 @@
       "path": "assets/vscode-icons/file_type_imba.svg",
       "upstreamPath": "icons/file_type_imba.svg",
       "sha256": "5cd1213f4104aba5edd3ceb445a7ee72b59fb12e622e45262e1ed6b36ff66d77",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_imgbot.svg",
+      "upstreamPath": "icons/file_type_imgbot.svg",
+      "sha256": "f402348e4643db7abc54e8771287c5c9b5f12b72e1c0fdd70b24c65e68af42dc",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -1643,9 +1775,27 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_kodiak.svg",
+      "upstreamPath": "icons/file_type_kodiak.svg",
+      "sha256": "fb79311c770377b19352284a4af2d48ed46d1c8bafc83851298ff73b75f77e83",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_kotlin.svg",
       "upstreamPath": "icons/file_type_kotlin.svg",
       "sha256": "6f10e38fa7866a53d4e7ea62474855a7cbc19d26a796f0ed275127e8123445c6",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_krita.svg",
+      "upstreamPath": "icons/file_type_krita.svg",
+      "sha256": "7f286c83a909efb3742244a09365f75e822197b2afa04bba72e67440160721db",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_kysely.svg",
+      "upstreamPath": "icons/file_type_kysely.svg",
+      "sha256": "8b53e063c8ad8fef6e5d9217a28440805b2f2f593d7df598db8483705503b74e",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -1769,6 +1919,18 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_light_behat.svg",
+      "upstreamPath": "icons/file_type_light_behat.svg",
+      "sha256": "f1559c5ffe1919ee5dabdd55153bce57d89731be7f8238d7abe4e13af9690208",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_light_checkov.svg",
+      "upstreamPath": "icons/file_type_light_checkov.svg",
+      "sha256": "c03ff4ef8d551901625c092742bedac5919ed728400bea2f240f776e5203efa5",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_light_circleci.svg",
       "upstreamPath": "icons/file_type_light_circleci.svg",
       "sha256": "c9958d9def133d528613eb025faca559856463570766814d13eea5e8df49388b",
@@ -1829,6 +1991,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_light_deepsource.svg",
+      "upstreamPath": "icons/file_type_light_deepsource.svg",
+      "sha256": "f108926158ff5bd89dbd6a68e024458ef83d5d1774a994ce7a1380ca2da2bd90",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_light_devenv.svg",
       "upstreamPath": "icons/file_type_light_devenv.svg",
       "sha256": "25001ec46c9e4ebeae07a321504f204d981710f3e77724188c4ca77daa31336c",
@@ -1879,7 +2047,19 @@
     {
       "path": "assets/vscode-icons/file_type_light_firebasehosting.svg",
       "upstreamPath": "icons/file_type_light_firebasehosting.svg",
-      "sha256": "df6dc8945e64fa3b84648737259222792ef79a2b983820c00ee2a78c5d22b983",
+      "sha256": "7a32d5edd19365ae93d4f4e9e6144b0beca8203ea611002bc4628d47540e174f",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_light_firebasestorage.svg",
+      "upstreamPath": "icons/file_type_light_firebasestorage.svg",
+      "sha256": "bde721b099cd4dc1f309436db627811077b3b2303c55873839b7173d0822f357",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_light_firestore.svg",
+      "upstreamPath": "icons/file_type_light_firestore.svg",
+      "sha256": "45b66f484df1ef524bc6407bb89c60781672765cc9ded8062c6c3488ad98a12e",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -1907,9 +2087,27 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_light_grok.svg",
+      "upstreamPath": "icons/file_type_light_grok.svg",
+      "sha256": "219ff014746f383dc7b3417110ab8229698cdd6eb3cc9511f460c2e20e92d971",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_light_hashicorp.svg",
       "upstreamPath": "icons/file_type_light_hashicorp.svg",
       "sha256": "1491e9fbe18cbcbde28e0f3f7b3bb614a2798e78a9f2476ba7deccc35cfc8a3e",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_light_heroku.svg",
+      "upstreamPath": "icons/file_type_light_heroku.svg",
+      "sha256": "632b4711968f6a160307bc6c97a9f008ce7b4c5b63ca81f93dbe6d9397215546",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_light_hip.svg",
+      "upstreamPath": "icons/file_type_light_hip.svg",
+      "sha256": "fdc9eceed4d4b2231f959019f9c2fc104a6e299887439397dc8d4a74a858f5a7",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -1967,6 +2165,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_light_livekit.svg",
+      "upstreamPath": "icons/file_type_light_livekit.svg",
+      "sha256": "6eeeda2f264511a16df98f6e5100c8624c49c3171ffa8881496ca1f49d76dcca",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_light_mailing.svg",
       "upstreamPath": "icons/file_type_light_mailing.svg",
       "sha256": "1a0e86f75a24404d2d840d1321dc127a72817752093a5836f7aadc2b997821c8",
@@ -1994,12 +2198,6 @@
       "path": "assets/vscode-icons/file_type_light_mikro_orm.svg",
       "upstreamPath": "icons/file_type_light_mikro_orm.svg",
       "sha256": "c476b71763f13c3edc58e8a74caca7c5e7d86565443a5426ca7a4caff94cd72b",
-      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
-    },
-    {
-      "path": "assets/vscode-icons/file_type_light_mustache.svg",
-      "upstreamPath": "icons/file_type_light_mustache.svg",
-      "sha256": "5129acad53096fb98f1ae4bd6615324d9f76c55eeb8bbeade9579443ab10323b",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -2063,9 +2261,27 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_light_prefect.svg",
+      "upstreamPath": "icons/file_type_light_prefect.svg",
+      "sha256": "313caa10e1381047565bb57ed13f91f2f61d72dfdaa48e6428536f7c247709ee",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_light_prettier.svg",
       "upstreamPath": "icons/file_type_light_prettier.svg",
       "sha256": "279c2af683b7e1a0c73911e877b47a6eb9872e7fd552f3f93c980cc39a0f3935",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_light_prismaconfig.svg",
+      "upstreamPath": "icons/file_type_light_prismaconfig.svg",
+      "sha256": "086254dac78f2c0599fe8f55baa710be6c7418da365a9a5b4140767871451274",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_light_pyrefly.svg",
+      "upstreamPath": "icons/file_type_light_pyrefly.svg",
+      "sha256": "2628c12033e96c28ed85f70c7bfa253c8ac38d44bc2b4d68bf693a2ce1c82d07",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -2111,12 +2327,6 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
-      "path": "assets/vscode-icons/file_type_light_replit.svg",
-      "upstreamPath": "icons/file_type_light_replit.svg",
-      "sha256": "b2dfc244392874f2e678cdc978afaaad8b726681c534d4e7d69c2719f891fdb0",
-      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
-    },
-    {
       "path": "assets/vscode-icons/file_type_light_retext.svg",
       "upstreamPath": "icons/file_type_light_retext.svg",
       "sha256": "a4895b5b3fdc6557f61d43d26f2e004b2f4f44d43195d5311069ededd6acf905",
@@ -2150,6 +2360,12 @@
       "path": "assets/vscode-icons/file_type_light_safetensors.svg",
       "upstreamPath": "icons/file_type_light_safetensors.svg",
       "sha256": "778951b7d61c98b2d09d0e38aef8c4e4c88b55b1a838c740a902739953a433b3",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_light_semanticrelease.svg",
+      "upstreamPath": "icons/file_type_light_semanticrelease.svg",
+      "sha256": "82648c476220764ff918a819c94ca49c394887c534adc1a240a698707b88fe09",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -2315,6 +2531,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_livekit.svg",
+      "upstreamPath": "icons/file_type_livekit.svg",
+      "sha256": "b484b3a57444417aeeff358e957c8fb5656dee17aa9ef74e0326f0de492d1824",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_livescript.svg",
       "upstreamPath": "icons/file_type_livescript.svg",
       "sha256": "7281dd864837ade330cbaaa3d62edb843abfc6253026cb0839f26a6d2672b674",
@@ -2348,6 +2570,12 @@
       "path": "assets/vscode-icons/file_type_lync.svg",
       "upstreamPath": "icons/file_type_lync.svg",
       "sha256": "e3fb0f75f420872a10419df70efd0bcc9ab65a1391a6849452c54a3f999aec9e",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_madge.svg",
+      "upstreamPath": "icons/file_type_madge.svg",
+      "sha256": "ae965460821573fb0f8a363862371e47ff84287c6bff821c782c66a20b08567b",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -2453,6 +2681,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_meteor.svg",
+      "upstreamPath": "icons/file_type_meteor.svg",
+      "sha256": "b33d658ab93015ffb86b213e9683e811c6e8a7fb80f4f9ca6227a12ff01219b3",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_metro.svg",
       "upstreamPath": "icons/file_type_metro.svg",
       "sha256": "53255487d97ee0e6464cd2958e914412b7d91f103b2b96146644587d6d95ee72",
@@ -2513,6 +2747,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_moniq.svg",
+      "upstreamPath": "icons/file_type_moniq.svg",
+      "sha256": "120d7e7e8b0984a1f4a9ee2663b315c589fdae005490041d977329dd0bfb60e9",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_monotone.svg",
       "upstreamPath": "icons/file_type_monotone.svg",
       "sha256": "01d9d21a48705cd9342aefd0cf5888951ee9cb11f69ac1ea297ddbcf54183911",
@@ -2528,12 +2768,6 @@
       "path": "assets/vscode-icons/file_type_msw.svg",
       "upstreamPath": "icons/file_type_msw.svg",
       "sha256": "c6345a8d0749c29e3abb62b063f6ef9c622df6e34c6a1e608459832e1b69bd45",
-      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
-    },
-    {
-      "path": "assets/vscode-icons/file_type_mustache.svg",
-      "upstreamPath": "icons/file_type_mustache.svg",
-      "sha256": "3b32524f65ef77fd7f5a5681a5cad55a712adfd0e947cf83dff5c32926b2545c",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -2591,6 +2825,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_ng-packagr.svg",
+      "upstreamPath": "icons/file_type_ng-packagr.svg",
+      "sha256": "0de755359ced8485cc5e912d752997dbeafcb036ac9e07b9061fd432b19f0b80",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_nginx.svg",
       "upstreamPath": "icons/file_type_nginx.svg",
       "sha256": "20a3ec1782ecf5de819d3bacbf03163a96fb9f1261562fbcb906091f8b0fee3a",
@@ -2600,6 +2840,12 @@
       "path": "assets/vscode-icons/file_type_ninja.svg",
       "upstreamPath": "icons/file_type_ninja.svg",
       "sha256": "c0c6f87e5bc4298fd66a7840ab1eb81f0a529ebe056a729138e2e49afbf02c4a",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_nitro.svg",
+      "upstreamPath": "icons/file_type_nitro.svg",
+      "sha256": "f565368c751025a2f45bcaa84613f7cce81655566b93df2127552798c1ee542a",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -2711,6 +2957,18 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_ocx.svg",
+      "upstreamPath": "icons/file_type_ocx.svg",
+      "sha256": "ba3edf35637c50b6aff885749268518b770892e9f32cac72cfd8622f455561a5",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_ohpm.svg",
+      "upstreamPath": "icons/file_type_ohpm.svg",
+      "sha256": "f60605e74065540beb2cc0aa8980f8e705f0ce3188d25089f0d9d62575c26bd3",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_onenote.svg",
       "upstreamPath": "icons/file_type_onenote.svg",
       "sha256": "5618836a69b799944cb3e91a24136861e684956bbb8dadf661cf276ff89c699b",
@@ -2759,6 +3017,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_overmind.svg",
+      "upstreamPath": "icons/file_type_overmind.svg",
+      "sha256": "532e9ef000594b92874c0ab55546654352968bad9f5d18c59e5b1faca4f3e27c",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_ovpn.svg",
       "upstreamPath": "icons/file_type_ovpn.svg",
       "sha256": "bcf038a5009bb197cf0c37e41dcbeeb0dce3197c6e97031fd0cdf0d2d2d8aacb",
@@ -2774,6 +3038,12 @@
       "path": "assets/vscode-icons/file_type_package.svg",
       "upstreamPath": "icons/file_type_package.svg",
       "sha256": "d6ee37f9e06d930c6f28aa0d5eb00dd202bdd7df153538c3edf77e586cc5b703",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_packer.svg",
+      "upstreamPath": "icons/file_type_packer.svg",
+      "sha256": "667b52a0d0b89875e7a46773c27de32eb3c609663579a0cdc3e4925cceb3ea0d",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -2821,7 +3091,7 @@
     {
       "path": "assets/vscode-icons/file_type_pdf.svg",
       "upstreamPath": "icons/file_type_pdf.svg",
-      "sha256": "9724c503c97e81903772591249b1a7dc67d7dd17567d60421018e723420db857",
+      "sha256": "f323533915b2665da2e3413ad53ff30e058dd3d8bbe2ebe6d6a6d8d2db91f86c",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -3011,6 +3281,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_prefect.svg",
+      "upstreamPath": "icons/file_type_prefect.svg",
+      "sha256": "c67d876dca90234090315f0c8875f7e9cfa9e74af5c9db6da28223dcf55a40e6",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_prettier.svg",
       "upstreamPath": "icons/file_type_prettier.svg",
       "sha256": "b5fe26ca20b98969e14d48be58f38c9bb10b969982a152797cdac155cf3ac23c",
@@ -3032,6 +3308,12 @@
       "path": "assets/vscode-icons/file_type_prolog.svg",
       "upstreamPath": "icons/file_type_prolog.svg",
       "sha256": "fee7ace09bd835f4c6ead64ef8e322287aa252e3e0b7875d913d9315da0e8b43",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_proteus.svg",
+      "upstreamPath": "icons/file_type_proteus.svg",
+      "sha256": "e0b9debbe3cb006cf3fb885d5e5631e9986b5aded9d0b03604d350743bb0d63e",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -3080,6 +3362,12 @@
       "path": "assets/vscode-icons/file_type_pypi.svg",
       "upstreamPath": "icons/file_type_pypi.svg",
       "sha256": "1403b3171627c4887972ea2a50752d2a116212ada4a02fc597f2c8466cc00696",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_pyrefly.svg",
+      "upstreamPath": "icons/file_type_pyrefly.svg",
+      "sha256": "ea18f635cf5eb2a47dde916c045163aedf2ea35788f543b0bcded587bc6b85ee",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -3149,6 +3437,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_quartoconfig.svg",
+      "upstreamPath": "icons/file_type_quartoconfig.svg",
+      "sha256": "cf66d61da76f9b4fbbaf75ddf374d2a76b10118cbf1b19f7870c17177ccda18d",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_quasar.svg",
       "upstreamPath": "icons/file_type_quasar.svg",
       "sha256": "570d049ef6fca8a0cf4e23bbcb599021bafca2d17ca8123f0b825ddb978857d7",
@@ -3203,6 +3497,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_rector.svg",
+      "upstreamPath": "icons/file_type_rector.svg",
+      "sha256": "49e456583fb409c6ecbd7557fe36a58fb0a69586f651bb2643016ac75176d048",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_registry.svg",
       "upstreamPath": "icons/file_type_registry.svg",
       "sha256": "23ee3146a0a8ce0d028c470f256b6959152644b520591ed3ecb14d16752bfeff",
@@ -3241,13 +3541,19 @@
     {
       "path": "assets/vscode-icons/file_type_replit.svg",
       "upstreamPath": "icons/file_type_replit.svg",
-      "sha256": "083759ebeaa713a5dbc2c3db74788e608cb10c4d2edc00237126ca48cc5e7ffa",
+      "sha256": "31f7536effc26cea0fbef1baec9966a6fd08eac8096dc15a192f0162363c6d13",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
       "path": "assets/vscode-icons/file_type_retext.svg",
       "upstreamPath": "icons/file_type_retext.svg",
       "sha256": "0481dc73afbd83a3e8ea9c7393875422cd3b324dba9ae9018093d293b161e9fc",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_reuse.svg",
+      "upstreamPath": "icons/file_type_reuse.svg",
+      "sha256": "9e0c7aa91715f73e333f0aa5453b94f9806a21ed412008269cde8095a5f97186",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -3296,6 +3602,12 @@
       "path": "assets/vscode-icons/file_type_rproj.svg",
       "upstreamPath": "icons/file_type_rproj.svg",
       "sha256": "21a7a7e54375376c6b47e3bacdf9a6bc5200175083ee30d519b7d051d99fd0fe",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_rspack.svg",
+      "upstreamPath": "icons/file_type_rspack.svg",
+      "sha256": "a0142ee0088c822618a5f4c5952b1bf5fa86d046ebb353bdcea9a2b44c74bad2",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -3386,6 +3698,12 @@
       "path": "assets/vscode-icons/file_type_seedkit.svg",
       "upstreamPath": "icons/file_type_seedkit.svg",
       "sha256": "33e50e2183fd4e039281263f511318c4e60709fd64ab2973270df7002530d221",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_semanticrelease.svg",
+      "upstreamPath": "icons/file_type_semanticrelease.svg",
+      "sha256": "415f66bcc9843ef3afa3babdf61c4640ee2f82c98a678a89008a4016f280c343",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -3527,6 +3845,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_sqlproj.svg",
+      "upstreamPath": "icons/file_type_sqlproj.svg",
+      "sha256": "416d2999df3d220742b5ad947daa235a80646201c9c809b9653205df2c35db46",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_sss.svg",
       "upstreamPath": "icons/file_type_sss.svg",
       "sha256": "b232797ed1eb8a1e70cc9457ad40c3ae890b162d65679539fd55e203003b5385",
@@ -3566,6 +3890,12 @@
       "path": "assets/vscode-icons/file_type_stryker.svg",
       "upstreamPath": "icons/file_type_stryker.svg",
       "sha256": "86e34ccdfd464f462caccbff9fa3795fe472eb0b8fbfbb2ebe4bb99a8015d0b1",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_styleci.svg",
+      "upstreamPath": "icons/file_type_styleci.svg",
+      "sha256": "9199790c47873d77978ec1de03f78c17c05520403f0f0fc947f0ecaec87c5636",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -3632,6 +3962,12 @@
       "path": "assets/vscode-icons/file_type_syncpack.svg",
       "upstreamPath": "icons/file_type_syncpack.svg",
       "sha256": "1cd3c0eef59d366021bcbebcaab98e182f40ff120980b8dc5461fed7d8fa0366",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_tablegen.svg",
+      "upstreamPath": "icons/file_type_tablegen.svg",
+      "sha256": "3adff814b7eb006dc85ee7f8a80f50a4a8594cdf330be61e2a5763574a65bafe",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -3761,6 +4097,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_tombi.svg",
+      "upstreamPath": "icons/file_type_tombi.svg",
+      "sha256": "f350d687bd89701a51837cd522de01b9f243715c5b19be8cd769867c8ec9c58e",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_tox.svg",
       "upstreamPath": "icons/file_type_tox.svg",
       "sha256": "54c70f6dae7e10b5cf6b843e4dbd93f22526057c50f16c212c217133a67b897b",
@@ -3851,6 +4193,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_ty.svg",
+      "upstreamPath": "icons/file_type_ty.svg",
+      "sha256": "6ef1ff90364a4e930db9b7450c8dc9aa6038bece4373e9f3067caa140bd20db7",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_typedoc.svg",
       "upstreamPath": "icons/file_type_typedoc.svg",
       "sha256": "781abcf8ecea5587b1ba39edfc3571f048ddbe11db7148ca7168c49d9383cee2",
@@ -3902,6 +4250,12 @@
       "path": "assets/vscode-icons/file_type_uv.svg",
       "upstreamPath": "icons/file_type_uv.svg",
       "sha256": "525f3627ecf5c7836af7a5cec783da9f7142af137120f351fdd7304c89269286",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_uvue.svg",
+      "upstreamPath": "icons/file_type_uvue.svg",
+      "sha256": "f38e9a2d0a175f1a18c0d70b82622f7ccae8b9b1cdbca9a79a116a19e80777f4",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -3998,6 +4352,12 @@
       "path": "assets/vscode-icons/file_type_vitest.svg",
       "upstreamPath": "icons/file_type_vitest.svg",
       "sha256": "0ec12d7acd115959195ff21089a30f5783805df0e86ac071d9dbc0def8fd03ee",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_vlt.svg",
+      "upstreamPath": "icons/file_type_vlt.svg",
+      "sha256": "5e087351edffad5b92630f3f66ddc9a3beb675ae5d1a555ffda0602ea4a2b09d",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -4103,6 +4463,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_werf.svg",
+      "upstreamPath": "icons/file_type_werf.svg",
+      "sha256": "cdc8c859fb88c3696e24d0fe6b602ed7f7b13f695e446fcce795c0c1f81a63ae",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_wikitext.svg",
       "upstreamPath": "icons/file_type_wikitext.svg",
       "sha256": "46584924d7d8fb47f04a644b0409c70a178559094c7914d0539c3449892910a9",
@@ -4199,6 +4565,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_xposed.svg",
+      "upstreamPath": "icons/file_type_xposed.svg",
+      "sha256": "b5f6e04a6319a8beb072a11ce4d40704ace300fbdacc5608dd1e33abc9d5fa1b",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_yaml_official.svg",
       "upstreamPath": "icons/file_type_yaml_official.svg",
       "sha256": "56d4844897a66106d9fa242c719a9b738f647ab1b9e8c5c581b32215812d895b",
@@ -4229,6 +4601,12 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/file_type_zensical.svg",
+      "upstreamPath": "icons/file_type_zensical.svg",
+      "sha256": "c7db38d4ac7df27e7ad02d7a4195050dfa7ce9ac0167447828cbb1d920aca9bf",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/file_type_zip.svg",
       "upstreamPath": "icons/file_type_zip.svg",
       "sha256": "9f172503d7d7e9d3f08b0045e446af3d97bbff783fbe7224db72f4ee186d35f8",
@@ -4238,6 +4616,24 @@
       "path": "assets/vscode-icons/file_type_zizmor.svg",
       "upstreamPath": "icons/file_type_zizmor.svg",
       "sha256": "bfa45d798c7ac3db4ab451f33dd744dd8411f1d26a82d0d1681d41ca638a2f09",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/file_type_zsh.svg",
+      "upstreamPath": "icons/file_type_zsh.svg",
+      "sha256": "67955f4b7d0c726534dd4f0f5e08440f03f4f41dfdc59c5fdf9fbbdf1fbe29a8",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_alpine_opened.svg",
+      "upstreamPath": "icons/folder_type_alpine_opened.svg",
+      "sha256": "1a0b11fb0fb9e736ab512dcb0a7ffc5ac7e2517e35d317ce05e81bb72d186dc4",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_alpine.svg",
+      "upstreamPath": "icons/folder_type_alpine.svg",
+      "sha256": "5ce35bcc995e8e898adb1b5e685eb73a3943a91622f72073ceb228c026e8daf5",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -4313,6 +4709,18 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/folder_type_arch_opened.svg",
+      "upstreamPath": "icons/folder_type_arch_opened.svg",
+      "sha256": "5fef1d67b56a1b42b0a81e589cccd7c4ae7d8eb819582c081c0f881a351a82ce",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_arch.svg",
+      "upstreamPath": "icons/folder_type_arch.svg",
+      "sha256": "bd356f224c977ef95782e515d666b5f8699db1daa934fa59d2294fc3d4c27cc4",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/folder_type_asset_opened.svg",
       "upstreamPath": "icons/folder_type_asset_opened.svg",
       "sha256": "6953394eefb6d1bfab88b478f6cb251252f6841a94b9f1a8b97983bbdcc9a091",
@@ -4358,6 +4766,18 @@
       "path": "assets/vscode-icons/folder_type_aurelia.svg",
       "upstreamPath": "icons/folder_type_aurelia.svg",
       "sha256": "b29b803d4890d4490bbcd47c31d3f3f8ee218bb779d6b9720fd686ef3091bf7b",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_auth_opened.svg",
+      "upstreamPath": "icons/folder_type_auth_opened.svg",
+      "sha256": "67a922e63a67fda4ba9faa40b065f456f07b47e12f20ea5e4c688a6b684a0176",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_auth.svg",
+      "upstreamPath": "icons/folder_type_auth.svg",
+      "sha256": "e76947bc10f4ac82c36e1be45d2e2230534a34f3279c6a3c61d05348daffa3d2",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -4937,6 +5357,18 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/folder_type_fedora_opened.svg",
+      "upstreamPath": "icons/folder_type_fedora_opened.svg",
+      "sha256": "153a88807f1e90d629a93670c3a7c532c06fbe5038570027ef8f8622680116e3",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_fedora.svg",
+      "upstreamPath": "icons/folder_type_fedora.svg",
+      "sha256": "c7b075d248d8cdac341b266795a02f987526f4790d303127886ba539857ab569",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/folder_type_flow_opened.svg",
       "upstreamPath": "icons/folder_type_flow_opened.svg",
       "sha256": "f779f3f80301d236cc6eaa7c4feacf821e2c0bec1a2a7651bcf60855dd3155aa",
@@ -5009,6 +5441,18 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/folder_type_gentoo_opened.svg",
+      "upstreamPath": "icons/folder_type_gentoo_opened.svg",
+      "sha256": "2cb4b8eb0decf57c7e7a8f5871c187b4d0166aeb43eaea4c02a00c908984b619",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_gentoo.svg",
+      "upstreamPath": "icons/folder_type_gentoo.svg",
+      "sha256": "c9629f824d036f9a6612b78d7d48e39ce836e4d2c309b42e3c50c12a7b6612c6",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/folder_type_git_opened.svg",
       "upstreamPath": "icons/folder_type_git_opened.svg",
       "sha256": "4763252dd6623c8aad09254043513d547b9619c0e1e01af15ef659a0cf9636c9",
@@ -5078,6 +5522,18 @@
       "path": "assets/vscode-icons/folder_type_graphql.svg",
       "upstreamPath": "icons/folder_type_graphql.svg",
       "sha256": "7b55ecdda759f3984a6f8dac171721b7025b84a3911b6e09d3a120201580ba4d",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_grok_opened.svg",
+      "upstreamPath": "icons/folder_type_grok_opened.svg",
+      "sha256": "a38b700d862a972845fefdf34ebfcd68a629e78c1c693c872ccd68970d9a281d",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_grok.svg",
+      "upstreamPath": "icons/folder_type_grok.svg",
+      "sha256": "13590f72c6e68244440fa4d4aed78d7a64e67b71752af7b506656e2802eab3f6",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -5321,6 +5777,18 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/folder_type_light_alpine_opened.svg",
+      "upstreamPath": "icons/folder_type_light_alpine_opened.svg",
+      "sha256": "3bc59f1ccbe5b299dc551773f7b9aa0a8896bc40d200ed58c5cfd755d168e042",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_light_alpine.svg",
+      "upstreamPath": "icons/folder_type_light_alpine.svg",
+      "sha256": "6d8e3b2fcf41b7a65dd63b66e61bf11b5b57d78c11622a1b60eb9e93a639ac0f",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/folder_type_light_cursor_opened.svg",
       "upstreamPath": "icons/folder_type_light_cursor_opened.svg",
       "sha256": "8ff16c9d15d44040e107c105117ec1ae99a862e91e78e2be4d517b60e41170ef",
@@ -5378,6 +5846,18 @@
       "path": "assets/vscode-icons/folder_type_light_expo.svg",
       "upstreamPath": "icons/folder_type_light_expo.svg",
       "sha256": "eeb294c5cdd7aa55a0f0dd08dcd1d608962151c6161d3f956ad6f0cbba6b6388",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_light_fedora_opened.svg",
+      "upstreamPath": "icons/folder_type_light_fedora_opened.svg",
+      "sha256": "87f7f272b0650766c8b65d9498fa69d3b312a21089874897fa3d07e9b57d3834",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_light_fedora.svg",
+      "upstreamPath": "icons/folder_type_light_fedora.svg",
+      "sha256": "036fcb690b6c261487e9136386789f054d4773a2c4041f4e0b747d8334331f5a",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -5450,6 +5930,18 @@
       "path": "assets/vscode-icons/folder_type_light_node.svg",
       "upstreamPath": "icons/folder_type_light_node.svg",
       "sha256": "5885d0bdde92011edc5c68b759ffb8db1a83755a8dbb257abd3a180d49ae1635",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_light_ocx_opened.svg",
+      "upstreamPath": "icons/folder_type_light_ocx_opened.svg",
+      "sha256": "3c8998847ce3f3e9a36d93c4aa344fdefd0916455c92c9ea26262793132a8dd6",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_light_ocx.svg",
+      "upstreamPath": "icons/folder_type_light_ocx.svg",
+      "sha256": "3639b4b34e9c9e5481d1839bce3b5f6b501329e92bfd8383cbc50a6853898ca6",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -5707,13 +6199,13 @@
     {
       "path": "assets/vscode-icons/folder_type_mongodb_opened.svg",
       "upstreamPath": "icons/folder_type_mongodb_opened.svg",
-      "sha256": "59eca14e45f36bf77ed8a3bf09dcf234a9d864ea5289efca99602173af6b7cfe",
+      "sha256": "758110e2abb208917601e1d18f869bc7a8ea851aec139c29ab54a2599291b293",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
       "path": "assets/vscode-icons/folder_type_mongodb.svg",
       "upstreamPath": "icons/folder_type_mongodb.svg",
-      "sha256": "72afdbdd0f8d75ab1a44951a00820af2a7fd50d2f1f18648bbf2e2d4d43cc0c7",
+      "sha256": "8bb197e24dcbe11338e146399f7f781024fc0aa71cf29dde0ed7d7d6782f903a",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -5849,6 +6341,30 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/folder_type_ocx_opened.svg",
+      "upstreamPath": "icons/folder_type_ocx_opened.svg",
+      "sha256": "42134eb47c4cb224ea5b1f146c1556a7b021b2dcf7ae0c036ac4411d12c3e28a",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_ocx.svg",
+      "upstreamPath": "icons/folder_type_ocx.svg",
+      "sha256": "9db849ed08cfda6f9a10c44aeaa5f402179582278ca3eadcad4f15154f0f6373",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_ohpm_opened.svg",
+      "upstreamPath": "icons/folder_type_ohpm_opened.svg",
+      "sha256": "07dfe8bb2c8d18134eb3feb975621f478ba9084103dd26d5aa31928eaa1f49c7",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_ohpm.svg",
+      "upstreamPath": "icons/folder_type_ohpm.svg",
+      "sha256": "9dc5b522e2b07f636b04d62ba8a1a610f716d602312d53e4a9759cad1560285c",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/folder_type_package_opened.svg",
       "upstreamPath": "icons/folder_type_package_opened.svg",
       "sha256": "6b69fdd704a24f4bc8dc451435849bc89e1f978320aebe3dfe94207dfe5e58ca",
@@ -5981,6 +6497,18 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/folder_type_redhat_opened.svg",
+      "upstreamPath": "icons/folder_type_redhat_opened.svg",
+      "sha256": "e602463ae3c557461f295a6cc60fb2b033337a9d0f0315dbbb5f60f1688ad052",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_redhat.svg",
+      "upstreamPath": "icons/folder_type_redhat.svg",
+      "sha256": "574cbfe1eb2f64567d2336d2330048821cd61e3626ed218162e5ab760c190f99",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/folder_type_redis_opened.svg",
       "upstreamPath": "icons/folder_type_redis_opened.svg",
       "sha256": "47ab4167c3030f35f73137ae9c3b33e4161b6a003e375508fda17742660a474d",
@@ -6026,6 +6554,18 @@
       "path": "assets/vscode-icons/folder_type_sass.svg",
       "upstreamPath": "icons/folder_type_sass.svg",
       "sha256": "cf3a72d72ff5008d68fae69b5018c7e4c616fb4eb0b2460ee1a482c4a9e6ec2b",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_schema_opened.svg",
+      "upstreamPath": "icons/folder_type_schema_opened.svg",
+      "sha256": "245906102d6b489e1c8c5f6660cff8bb8af7d49af4fb5e5e305ab8019b0014a7",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_schema.svg",
+      "upstreamPath": "icons/folder_type_schema.svg",
+      "sha256": "cc2b6a154e68b0672856e5add5934a7b29c4f55ddde194047cda0ab5d5073f97",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -6086,6 +6626,18 @@
       "path": "assets/vscode-icons/folder_type_shared.svg",
       "upstreamPath": "icons/folder_type_shared.svg",
       "sha256": "647f8a4277e3fa8aadded112048ef61f3b00a4b2e2c0149a70a37c76f9e2b4a6",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_slackware_opened.svg",
+      "upstreamPath": "icons/folder_type_slackware_opened.svg",
+      "sha256": "7080e8919385adb06c57209e3470f83aa2d86a7243f4f86dc8dcd7c5ad639f27",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_slackware.svg",
+      "upstreamPath": "icons/folder_type_slackware.svg",
+      "sha256": "889f336447f894fccc6b598c9889c0016222f66b22ba8f86d47532a8e1be91a7",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -6173,6 +6725,18 @@
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
+      "path": "assets/vscode-icons/folder_type_suse_opened.svg",
+      "upstreamPath": "icons/folder_type_suse_opened.svg",
+      "sha256": "ed8dab5100fb8edb129c81964b56e669f9c5625689c4c8fca8a56abcc65da4ce",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_suse.svg",
+      "upstreamPath": "icons/folder_type_suse.svg",
+      "sha256": "98f3a97309d680edd10bad0c256d9ec6b5b4b23f3d1572c6572f13097d18a650",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
       "path": "assets/vscode-icons/folder_type_svelte_opened.svg",
       "upstreamPath": "icons/folder_type_svelte_opened.svg",
       "sha256": "6edeabaaf0e96ac9f128a4033aa6557f6d8540461e9154fa742083f83ecdbc82",
@@ -6206,6 +6770,18 @@
       "path": "assets/vscode-icons/folder_type_tauri.svg",
       "upstreamPath": "icons/folder_type_tauri.svg",
       "sha256": "ee8434d89ee83330770019e415a34757edba494477afea9f7e8bab8160cefa84",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_telegram_opened.svg",
+      "upstreamPath": "icons/folder_type_telegram_opened.svg",
+      "sha256": "6e0e215296b6b7994f7eefa872678afb6e1ec3a3a968b067ee06098f94e192cf",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_telegram.svg",
+      "upstreamPath": "icons/folder_type_telegram.svg",
+      "sha256": "ddd391ae0ce4beffa58c9f1117371ba780091cfe284299bb7520831edceb3941",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
@@ -6386,6 +6962,18 @@
       "path": "assets/vscode-icons/folder_type_vitepress.svg",
       "upstreamPath": "icons/folder_type_vitepress.svg",
       "sha256": "48303b055cb366f0b357f51d78e05671d04c1c1eeb16ac4505783f6acede34bf",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_void_opened.svg",
+      "upstreamPath": "icons/folder_type_void_opened.svg",
+      "sha256": "1e3603bb718c4731326b25d80f16e2cef9ee6cec2528e1e5d2d12f0fe96145ec",
+      "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
+    },
+    {
+      "path": "assets/vscode-icons/folder_type_void.svg",
+      "upstreamPath": "icons/folder_type_void.svg",
+      "sha256": "223060cba6e3c38ed344737afb6da62e8a3333b275848d4ed462badf98c39a7b",
       "licenseStatus": "upstream-defined; per-file branded-icon classification is not included in the VSIX"
     },
     {
