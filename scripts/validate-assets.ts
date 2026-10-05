@@ -1,6 +1,6 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { collectFiles, readProject, validateIconAssets } from "./lib/extension-validation.mjs";
+import { collectFiles, readProject, validateIconAssets } from "./lib/extension-validation.ts";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const project = await readProject(root);

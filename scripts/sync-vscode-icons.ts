@@ -3,6 +3,40 @@ import { appendFile, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { unzipSync } from "fflate";
+import type {
+  GeneratedIconMap, IconAsset, IconPathMap, ThemeDefaults, ThemeMappings, UpstreamRelease,
+} from "../src/icon-types.ts";
+import type { ExtensionFiles } from "./lib/extension-validation.ts";
+
+interface GitHubRelease {
+  tag_name: string;
+  html_url: string;
+  assets?: { name: string; browser_download_url: string }[];
+}
+
+interface UpstreamPackage {
+  version: string;
+  license?: string;
+  contributes?: { iconThemes?: { path: string }[] };
+}
+
+type IconDefinitions = Record<string, { iconPath?: string }>;
+
+type UpstreamThemeMappings = Partial<Record<keyof ThemeDefaults, string>> & {
+  fileNames?: IconPathMap;
+  fileExtensions?: IconPathMap;
+  folderNames?: IconPathMap;
+  folderNamesExpanded?: IconPathMap;
+};
+
+interface UpstreamTheme extends UpstreamThemeMappings {
+  iconDefinitions?: IconDefinitions;
+  light?: UpstreamThemeMappings;
+}
+
+type ImportedTheme = Omit<ThemeMappings, "defaults"> & {
+  defaults: { [Key in keyof ThemeDefaults]: string | undefined };
+};
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceRepository = "vscode-icons/vscode-icons";
@@ -13,7 +47,7 @@ const generatedDirectory = path.join(root, "src/generated");
 const licenseDirectory = path.join(root, "licenses");
 const assetManifestPath = path.join(licenseDirectory, "vscode-icons-assets.json");
 
-function fail(message) {
+function fail(message: string): never {
   throw new Error(message);
 }
 
@@ -27,7 +61,7 @@ async function getRelease() {
   });
   if (!response.ok) fail(`GitHub release lookup failed: HTTP ${response.status}`);
 
-  const release = await response.json();
+  const release: GitHubRelease = await response.json();
   const asset = release.assets?.find((candidate) =>
     /^vscode-icons-\d+\.\d+\.\d+\.vsix$/.test(candidate.name),
   );
@@ -61,17 +95,17 @@ async function getInput() {
   return getRelease();
 }
 
-function parseJsonFile(archive, filename) {
+function parseJsonFile<T>(archive: ExtensionFiles, filename: string): T {
   const bytes = archive[filename];
   if (!bytes) fail(`VSIX is missing ${filename}`);
   try {
-    return JSON.parse(new TextDecoder().decode(bytes));
+    return JSON.parse(new TextDecoder().decode(bytes)) as T;
   } catch (error) {
-    fail(`Could not parse ${filename}: ${error.message}`);
+    fail(`Could not parse ${filename}: ${error instanceof Error ? error.message : String(error)}`);
   }
 }
 
-function normalizeIconPath(iconPath) {
+function normalizeIconPath(iconPath: string): string {
   if (typeof iconPath !== "string" || iconPath.length === 0) {
     fail("Upstream icon definition has no iconPath");
   }
@@ -84,8 +118,8 @@ function normalizeIconPath(iconPath) {
   return path.posix.basename(archivePath);
 }
 
-function objectMapToAssets(map, iconDefinitions) {
-  const result = {};
+function objectMapToAssets(map: IconPathMap | undefined, iconDefinitions: IconDefinitions): IconPathMap {
+  const result: IconPathMap = {};
   for (const [key, definitionId] of Object.entries(map ?? {}).sort(([a], [b]) =>
     a.localeCompare(b),
   )) {
@@ -103,9 +137,10 @@ function objectMapToAssets(map, iconDefinitions) {
   return result;
 }
 
-function createTheme(theme, iconDefinitions) {
-  const getDefault = (key) => {
-    const definition = iconDefinitions[theme[key]];
+function createTheme(theme: UpstreamThemeMappings, iconDefinitions: IconDefinitions): ImportedTheme {
+  const getDefault = (key: keyof ThemeDefaults): string | undefined => {
+    const definitionId = theme[key];
+    const definition = definitionId === undefined ? undefined : iconDefinitions[definitionId];
     if (!definition) fail(`Missing upstream default icon definition ${theme[key]}`);
     return definition.iconPath ? normalizeIconPath(definition.iconPath) : undefined;
   };
@@ -127,6 +162,13 @@ function createTheme(theme, iconDefinitions) {
       namesExpanded: objectMapToAssets(theme.folderNamesExpanded, iconDefinitions),
     },
   };
+}
+
+function requireDefaults(defaults: ImportedTheme["defaults"]): ThemeDefaults {
+  for (const [key, filename] of Object.entries(defaults)) {
+    if (!filename) fail(`Upstream default icon ${key} has no iconPath`);
+  }
+  return defaults as ThemeDefaults;
 }
 
 const commonFileNameAliases = {
@@ -182,7 +224,7 @@ const commonFileExtensionAliases = {
   zsh: "file_type_shell.svg",
 };
 
-function addCommonFileAliases(theme) {
+function addCommonFileAliases(theme: ThemeMappings): void {
   for (const [name, filename] of Object.entries(commonFileNameAliases)) {
     if (!Object.hasOwn(theme.files.names, name)) theme.files.names[name] = filename;
   }
@@ -193,23 +235,23 @@ function addCommonFileAliases(theme) {
   }
 }
 
-function sha256(bytes) {
+function sha256(bytes: Uint8Array): string {
   return createHash("sha256").update(bytes).digest("hex");
 }
 
-async function writeJson(filename, value) {
+async function writeJson(filename: string, value: unknown): Promise<void> {
   await mkdir(path.dirname(filename), { recursive: true });
   await writeFile(filename, `${JSON.stringify(value, null, 2)}\n`);
 }
 
-async function writeActionOutput(key, value) {
+async function writeActionOutput(key: string, value: string): Promise<void> {
   if (!process.env.GITHUB_OUTPUT) return;
   await appendFile(process.env.GITHUB_OUTPUT, `${key}=${value}\n`);
 }
 
 const input = await getInput();
 const archive = unzipSync(input.bytes);
-const packageJson = parseJsonFile(archive, "extension/package.json");
+const packageJson = parseJsonFile<UpstreamPackage>(archive, "extension/package.json");
 if (packageJson.license !== "MIT") {
   fail(`Upstream source-code license changed from MIT to ${packageJson.license ?? "unspecified"}`);
 }
@@ -237,11 +279,12 @@ if (!/Branded icons are licensed under their copyright license\./i.test(upstream
 const iconThemePath = packageJson.contributes?.iconThemes?.[0]?.path;
 if (typeof iconThemePath !== "string") fail("VSIX has no default icon theme path");
 const themeArchivePath = path.posix.join("extension", iconThemePath);
-const upstreamTheme = parseJsonFile(archive, themeArchivePath);
+const upstreamTheme = parseJsonFile<UpstreamTheme>(archive, themeArchivePath);
 const iconDefinitions = upstreamTheme.iconDefinitions ?? {};
-const dark = createTheme(upstreamTheme, iconDefinitions);
+const importedDark = createTheme(upstreamTheme, iconDefinitions);
+const dark: ThemeMappings = { ...importedDark, defaults: requireDefaults(importedDark.defaults) };
 const upstreamLight = upstreamTheme.light ?? {};
-const light = {
+const light: ThemeMappings = {
   defaults: { ...dark.defaults },
   files: {
     names: { ...dark.files.names },
@@ -279,7 +322,7 @@ if (input.tag !== "local-package" && input.tag.replace(/^v/, "") !== version) {
 }
 const releaseUrl =
   input.tag === "local-package" ? `${sourceUrl}/releases/tag/v${version}` : input.releaseUrl;
-const activeIconNames = new Set();
+const activeIconNames = new Set<string>();
 for (const theme of [dark, light]) {
   Object.values(theme.defaults).forEach((filename) => activeIconNames.add(filename));
   Object.values(theme.files).forEach((mapping) =>
@@ -291,7 +334,7 @@ for (const theme of [dark, light]) {
 }
 
 const sortedIconNames = [...activeIconNames].sort((a, b) => a.localeCompare(b));
-const assetFiles = [];
+const assetFiles: IconAsset[] = [];
 for (const filename of sortedIconNames) {
   const archivePath = `extension/icons/${filename}`;
   const bytes = archive[archivePath];
@@ -304,7 +347,7 @@ for (const filename of sortedIconNames) {
   });
 }
 
-const releaseInfo = {
+const releaseInfo: UpstreamRelease = {
   repository: sourceRepository,
   version,
   tag: `v${version}`,
@@ -315,7 +358,7 @@ const releaseInfo = {
   licenseSource: `${sourceUrl}/blob/v${version}/README.md#license`,
 };
 
-const generatedMap = { upstream: releaseInfo, dark, light };
+const generatedMap: GeneratedIconMap = { upstream: releaseInfo, dark, light };
 await rm(assetsDirectory, { recursive: true, force: true });
 await mkdir(assetsDirectory, { recursive: true });
 for (const asset of assetFiles) {

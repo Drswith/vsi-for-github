@@ -6,6 +6,10 @@ Install mise, then run `mise install` from the repository root. `mise.toml` supp
 
 `check` runs type checking, regression tests, asset validation, the production build, and ZIP packaging. Tests execute the production content-script bundle against GitHub DOM fixtures in jsdom and exercise invalid assets, incomplete packages, and release versions without network access. They do not replace a real browser check when GitHub changes its page layout.
 
+Write maintained source, scripts, tests, and build configuration in TypeScript. Browser code is checked by `tsconfig.json`; Node.js scripts, tests, and Vite configuration are checked by `tsconfig.node.json`. Shared icon-data types live in `src/icon-types.ts`. Generated maps and inventories remain JSON, and the shipped content script remains JavaScript.
+
+Node.js runs scripts and tests directly using its built-in type stripping. Use explicit `.ts` extensions for local imports and `import type` for type-only imports. Keep TypeScript syntax erasable: enums, parameter properties, and other syntax requiring runtime transformation are disallowed by the compiler. Type stripping does not check types; run `pnpm typecheck` or the full `pnpm check` before submitting changes.
+
 ## CI and merging
 
 The required `build` check runs against GitHub's PR merge commit. Keep `main` protected with this check required from GitHub Actions, require the branch to be up to date, and apply protection to administrators. Manual workflow runs are named `manual-build` so a branch-only build cannot satisfy the PR gate.
