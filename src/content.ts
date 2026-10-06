@@ -1,29 +1,5 @@
 import iconMap from "./generated/icons.generated.json";
-
-type IconPathMap = Record<string, string>;
-
-interface ThemeMappings {
-  defaults: {
-    file: string;
-    folder: string;
-    folderExpanded: string;
-    rootFolder: string;
-    rootFolderExpanded: string;
-  };
-  files: {
-    names: IconPathMap;
-    extensions: IconPathMap;
-  };
-  folders: {
-    names: IconPathMap;
-    namesExpanded: IconPathMap;
-  };
-}
-
-interface GeneratedIconMap {
-  dark: ThemeMappings;
-  light: ThemeMappings;
-}
+import type { GeneratedIconMap } from "./icon-types.ts";
 
 declare const chrome: {
   runtime: {
@@ -31,7 +7,7 @@ declare const chrome: {
   };
 };
 
-const themes = iconMap as GeneratedIconMap;
+const themes: GeneratedIconMap = iconMap;
 const iconAttribute = "data-vsi-for-github-icon";
 const entrySelector = 'a[href*="/blob/"], a[href*="/tree/"]';
 const iconClass = "vsi-for-github-icon";

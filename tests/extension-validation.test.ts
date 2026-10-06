@@ -2,30 +2,43 @@ import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import test from "node:test";
 import { unzipSync, zipSync } from "fflate";
-import { validateExtension, validateIconAssets, validateReleaseVersion } from "../scripts/lib/extension-validation.mjs";
+import { validateExtension, validateIconAssets, validateReleaseVersion } from "../scripts/lib/extension-validation.ts";
+import type { ExtensionFiles, ExtensionProject } from "../scripts/lib/extension-validation.ts";
+import type { IconInventory, ThemeMappings, UpstreamRelease } from "../src/icon-types.ts";
 
-const bytes = (text) => new TextEncoder().encode(text);
-const json = (value) => bytes(JSON.stringify(value));
+const bytes = (text: string) => new TextEncoder().encode(text);
+const json = (value: unknown) => bytes(JSON.stringify(value));
 
 function fixture() {
-  const files = {
+  const files: ExtensionFiles = {
     "assets/vscode-icons/default.svg": bytes('<svg xmlns="http://www.w3.org/2000/svg"/>'),
     "assets/vscode-icons/special.svg": bytes('<svg xmlns="http://www.w3.org/2000/svg"><path/></svg>'),
     "content.js": bytes("(() => {})();"),
     "content.css": bytes("img { width: 20px; }"),
     "icons/vsi-16.png": new Uint8Array([137, 80, 78, 71]),
   };
-  const theme = {
-    defaults: Object.fromEntries(["file", "folder", "folderExpanded", "rootFolder", "rootFolderExpanded"].map((key) => [key, "default.svg"])),
+  const theme: ThemeMappings = {
+    defaults: {
+      file: "default.svg", folder: "default.svg", folderExpanded: "default.svg",
+      rootFolder: "default.svg", rootFolderExpanded: "default.svg",
+    },
     files: { names: { "package.json": "special.svg" }, extensions: { json: "special.svg" } },
     folders: { names: {}, namesExpanded: {} },
   };
-  const upstream = { repository: "vscode-icons/vscode-icons", version: "12.19.0" };
-  const inventory = {
+  const upstream: UpstreamRelease = {
+    repository: "vscode-icons/vscode-icons", version: "12.19.0", tag: "v12.19.0",
+    releaseUrl: "https://github.com/vscode-icons/vscode-icons/releases/tag/v12.19.0",
+    packageAsset: "vscode-icons-12.19.0.vsix", packageSha256: "0".repeat(64),
+    mappingSource: "extension/dist/src/vsicons-icon-theme.json",
+    licenseSource: "https://github.com/vscode-icons/vscode-icons/blob/v12.19.0/README.md#license",
+  };
+  const inventory: IconInventory = {
     upstream,
     assets: Object.entries(files).filter(([name]) => name.endsWith(".svg")).map(([name, data]) => ({
       path: name,
+      upstreamPath: name.replace("assets/vscode-icons/", "icons/"),
       sha256: createHash("sha256").update(data).digest("hex"),
+      licenseStatus: "test fixture",
     })),
   };
   const noticeFiles = Object.fromEntries([
@@ -44,11 +57,11 @@ function fixture() {
     files,
     manifest,
     project: {
-      packageJson: { version: "0.1.0" },
+      packageJson: { name: "vsi-for-github", version: "0.1.0" },
       iconMap: { upstream: structuredClone(upstream), dark: structuredClone(theme), light: structuredClone(theme) },
       inventory,
       noticeFiles,
-    },
+    } satisfies ExtensionProject,
   };
 }
 

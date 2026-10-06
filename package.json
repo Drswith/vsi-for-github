@@ -10,15 +10,17 @@
     "node": "^24.15.0 || >=26.0.0"
   },
   "scripts": {
-    "build": "pnpm validate:assets && vite build && node scripts/copy-distribution-notices.mjs",
+    "build": "pnpm validate:assets && vite build && node scripts/copy-distribution-notices.ts",
     "check": "pnpm typecheck && pnpm test && pnpm build && pnpm package",
-    "test": "node --test tests/*.test.mjs",
-    "validate:assets": "node scripts/validate-assets.mjs",
-    "typecheck": "tsc --noEmit",
-    "sync:upstream": "node scripts/sync-vscode-icons.mjs",
-    "package": "node scripts/package-extension.mjs"
+    "test": "node --test tests/*.test.ts",
+    "validate:assets": "node scripts/validate-assets.ts",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.node.json",
+    "sync:upstream": "node scripts/sync-vscode-icons.ts",
+    "package": "node scripts/package-extension.ts"
   },
   "devDependencies": {
+    "@types/jsdom": "^30.0.0",
+    "@types/node": "^24.19.1",
     "fflate": "^0.8.3",
     "jsdom": "30.1.1",
     "typescript": "^7.0.2",

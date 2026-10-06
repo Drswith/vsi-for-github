@@ -2,6 +2,29 @@ import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
+import type { GeneratedIconMap, IconInventory } from "../../src/icon-types.ts";
+
+export type ExtensionFiles = Record<string, Uint8Array>;
+
+export interface ExtensionManifest {
+  manifest_version: number;
+  version: string;
+  icons?: Record<string, string>;
+  content_scripts: {
+    matches?: string[];
+    js?: string[];
+    css?: string[];
+  }[];
+}
+
+export interface ExtensionProject {
+  packageJson: { name: string; version: string };
+  iconMap: GeneratedIconMap;
+  inventory: IconInventory;
+  noticeFiles: ExtensionFiles;
+}
+
+type ReleaseEnvironment = Record<string, string | undefined>;
 
 const notices = [
   "LICENSE",
@@ -11,8 +34,8 @@ const notices = [
   "licenses/vscode-icons-source-MIT.txt",
 ];
 
-export async function collectFiles(directory, prefix = "") {
-  const files = Object.create(null);
+export async function collectFiles(directory: string, prefix = ""): Promise<ExtensionFiles> {
+  const files: ExtensionFiles = Object.create(null);
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const relativePath = path.posix.join(prefix, entry.name);
     const absolutePath = path.join(directory, entry.name);
@@ -27,17 +50,24 @@ export async function collectFiles(directory, prefix = "") {
   return files;
 }
 
-export async function readProject(root) {
+export async function readProject(root: string): Promise<ExtensionProject> {
   const [packageJson, iconMap, inventory] = await Promise.all([
-    "package.json", "src/generated/icons.generated.json", "licenses/vscode-icons-assets.json",
-  ].map(async (filename) => JSON.parse(await readFile(path.join(root, filename), "utf8"))));
+    readJson<ExtensionProject["packageJson"]>(path.join(root, "package.json")),
+    readJson<GeneratedIconMap>(path.join(root, "src/generated/icons.generated.json")),
+    readJson<IconInventory>(path.join(root, "licenses/vscode-icons-assets.json")),
+  ]);
   const noticeFiles = Object.fromEntries(await Promise.all(notices.map(async (filename) =>
     [filename, new Uint8Array(await readFile(path.join(root, filename)))],
   )));
   return { packageJson, iconMap, inventory, noticeFiles };
 }
 
-function requireFile(files, filename) {
+async function readJson<T>(filename: string): Promise<T> {
+  // The runtime validators below check the parsed data before distribution.
+  return JSON.parse(await readFile(filename, "utf8")) as T;
+}
+
+function requireFile(files: ExtensionFiles, filename: string): Uint8Array {
   assert.ok(typeof filename === "string" && filename.length > 0 &&
     !path.posix.isAbsolute(filename) && !filename.includes("\\") &&
     !filename.split("/").some((part) => part === ".." || part === "." || part === ""),
@@ -47,18 +77,21 @@ function requireFile(files, filename) {
   return files[filename];
 }
 
-function iconAssetPath(filename) {
+function iconAssetPath(filename: string): string {
   assert.ok(typeof filename === "string" && /^[\w.-]+\.svg$/.test(filename),
     `Invalid icon filename: ${filename}`);
   return `assets/vscode-icons/${filename}`;
 }
 
-export function validateIconAssets(files, { iconMap, inventory }) {
+export function validateIconAssets(
+  files: ExtensionFiles,
+  { iconMap, inventory }: Pick<ExtensionProject, "iconMap" | "inventory">,
+): number {
   assert.deepEqual(iconMap.upstream, inventory.upstream, "Icon map and inventory upstream metadata differ");
-  const referenced = new Set();
-  for (const themeName of ["dark", "light"]) {
+  const referenced = new Set<string>();
+  for (const themeName of ["dark", "light"] as const) {
     const theme = iconMap[themeName];
-    for (const key of ["file", "folder", "folderExpanded", "rootFolder", "rootFolderExpanded"]) {
+    for (const key of ["file", "folder", "folderExpanded", "rootFolder", "rootFolderExpanded"] as const) {
       referenced.add(iconAssetPath(theme.defaults[key]));
     }
     for (const mapping of [theme.files.names, theme.files.extensions, theme.folders.names, theme.folders.namesExpanded]) {
@@ -68,7 +101,7 @@ export function validateIconAssets(files, { iconMap, inventory }) {
   }
 
   assert.ok(Array.isArray(inventory.assets) && inventory.assets.length > 0, "Empty icon inventory");
-  const inventoried = new Set();
+  const inventoried = new Set<string>();
   for (const asset of inventory.assets) {
     assert.ok(!inventoried.has(asset.path), `Duplicate inventory entry: ${asset.path}`);
     inventoried.add(asset.path);
@@ -87,15 +120,19 @@ export function validateIconAssets(files, { iconMap, inventory }) {
   return inventoried.size;
 }
 
-export function validateReleaseVersion(version, env = {}) {
+export function validateReleaseVersion(version: string, env: ReleaseEnvironment = {}): void {
   if (env.GITHUB_EVENT_NAME !== "release") return;
   assert.equal(env.GITHUB_REF_TYPE, "tag", "A release must build a tag ref");
   assert.equal(env.GITHUB_REF_NAME, `v${version}`,
     `Release tag ${env.GITHUB_REF_NAME ?? "(missing)"} does not match package version ${version}`);
 }
 
-export function validateExtension(files, project, env = {}) {
-  const manifest = JSON.parse(new TextDecoder().decode(requireFile(files, "manifest.json")));
+export function validateExtension(
+  files: ExtensionFiles,
+  project: ExtensionProject,
+  env: ReleaseEnvironment = {},
+): void {
+  const manifest: ExtensionManifest = JSON.parse(new TextDecoder().decode(requireFile(files, "manifest.json")));
   assert.equal(manifest.manifest_version, 3, "Expected a Manifest V3 extension");
   assert.equal(manifest.version, project.packageJson.version, "Package and manifest versions differ");
   validateReleaseVersion(project.packageJson.version, env);

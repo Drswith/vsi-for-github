@@ -1,15 +1,21 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import test from "node:test";
+import test, { type TestContext } from "node:test";
 import { JSDOM } from "jsdom";
 import { build } from "vite";
+import type { GeneratedIconMap } from "../src/icon-types.ts";
 
-const iconMap = JSON.parse(await readFile(new URL("../src/generated/icons.generated.json", import.meta.url)));
-const result = await build({ logLevel: "silent", build: { write: false } });
-const bundle = result.output.find((entry) => entry.type === "chunk" && entry.isEntry).code;
-const flushMutations = () => new Promise(setImmediate);
+const iconMap: GeneratedIconMap = JSON.parse(await readFile(new URL("../src/generated/icons.generated.json", import.meta.url), "utf8"));
+const result = await build({ logLevel: "silent", build: { write: false, watch: null } });
+assert.ok(!Array.isArray(result) && "output" in result, "build should return one output bundle");
+const entry = result.output.find((entry) => entry.type === "chunk" && entry.isEntry);
+assert.ok(entry?.type === "chunk", "build should include the content-script entry chunk");
+const bundle = entry.code;
+const flushMutations = () => new Promise<void>((resolve) => setImmediate(resolve));
 
-function row(name, { route = "blob", repository = "owner/repo", nativeIcon = true } = {}) {
+function row(name: string, { route = "blob", repository = "owner/repo", nativeIcon = true }: {
+  route?: string; repository?: string; nativeIcon?: boolean;
+} = {}) {
   return `<tr class="react-directory-row"><td><div class="react-directory-filename-column">
     ${nativeIcon ? '<svg class="octicon" aria-hidden="true"></svg>' : ""}
     <a aria-label="${name}, (${route === "tree" ? "Directory" : "File"})"
@@ -17,21 +23,26 @@ function row(name, { route = "blob", repository = "owner/repo", nativeIcon = tru
   </div></td></tr>`;
 }
 
-function createPage(t, html, mode = "dark") {
+function createPage(t: TestContext, html: string, mode = "dark") {
   const dom = new JSDOM(html, { url: "https://github.com/owner/repo", runScripts: "outside-only" });
   t.after(() => dom.window.close());
   const { window } = dom;
   window.document.documentElement.setAttribute("data-color-mode", mode);
-  const media = new window.EventTarget();
-  media.matches = false;
+  const media = Object.assign(new window.EventTarget() as EventTarget, {
+    matches: false,
+    media: "(prefers-color-scheme: dark)",
+    onchange: null,
+    addListener: () => {},
+    removeListener: () => {},
+  });
   window.matchMedia = () => media;
-  window.chrome = { runtime: { getURL: (asset) => `https://extension.invalid/${asset}` } };
+  window.chrome = { runtime: { getURL: (asset: string) => `https://extension.invalid/${asset}` } };
   window.eval(bundle);
   return { window, document: window.document, media };
 }
 
-function iconPath(container) {
-  const image = container.querySelector("img[data-vsi-for-github-icon]");
+function iconPath(container: ParentNode) {
+  const image = container.querySelector<HTMLImageElement>("img[data-vsi-for-github-icon]");
   assert.ok(image, "repository entry should receive an icon");
   return new URL(image.src).pathname.split("/").at(-1);
 }
@@ -40,7 +51,7 @@ test("theme changes refresh icons beside links without an unrelated DOM mutation
   const { document } = createPage(t, `<table>${row(".babelrc")}</table>`, "light");
   assert.notEqual(iconMap.light.files.names[".babelrc"], iconMap.dark.files.names[".babelrc"]);
   assert.equal(iconPath(document), iconMap.light.files.names[".babelrc"]);
-  assert.equal(document.querySelector("img").closest("a"), null);
+  assert.equal(document.querySelector("img")?.closest("a"), null);
 
   document.documentElement.setAttribute("data-color-mode", "dark");
   await flushMutations();
@@ -61,7 +72,7 @@ test("system theme changes refresh auto-mode icons", async (t) => {
 });
 
 test("inherited object keys use default file and folder icons", (t) => {
-  const cases = [
+  const cases: [string, string, string][] = [
     ["constructor", "blob", iconMap.dark.defaults.file],
     ["__proto__", "blob", iconMap.dark.defaults.file],
     ["file.constructor", "blob", iconMap.dark.defaults.file],
@@ -76,7 +87,7 @@ test("inherited object keys use default file and folder icons", (t) => {
 });
 
 test("filename matching, compound extensions and unknown-file fallback remain intact", (t) => {
-  const cases = [
+  const cases: [string, string][] = [
     ["PACKAGE.JSON", iconMap.dark.files.names["package.json"]],
     ["types.d.ts", iconMap.dark.files.extensions["d.ts"]],
     ["unknown.vsi-unknown", iconMap.dark.defaults.file],
@@ -90,7 +101,9 @@ test("filename matching, compound extensions and unknown-file fallback remain in
 
 test("new repository rows are enhanced and repeated navigation does not duplicate icons", async (t) => {
   const { window, document } = createPage(t, `<table>${row("package.json")}</table>`);
-  document.querySelector("tbody").insertAdjacentHTML("beforeend", row(".babelrc", { nativeIcon: false }));
+  const tbody = document.querySelector("tbody");
+  assert.ok(tbody);
+  tbody.insertAdjacentHTML("beforeend", row(".babelrc", { nativeIcon: false }));
   await flushMutations();
   document.dispatchEvent(new window.Event("turbo:load"));
   document.dispatchEvent(new window.Event("turbo:render"));
